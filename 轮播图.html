@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .all {
+            width: 500px;
+            height: 300px;
+            margin: 100px auto;
+            overflow: hidden;
+            position: relative;
+        }
+
+        li {
+            float: left;
+        }
+
+        .circle {
+
+            left: 50%;
+            margin-left: -50px;
+            position: absolute;
+            bottom: 10px;
+        }
+
+        .circle span {
+            float: left;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            text-align: center;
+            color: #ffffff;
+            background-color: #f00;
+            line-height: 18px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .circle span.current {
+            background-color: #0f0;
+        }
+    </style>
+    <script>
+        window.onload=function () {
+            var div=document.createElement("div");
+            div.setAttribute("class","circle");
+            var all=document.getElementById("all");
+
+            all.appendChild(div);
+
+            var ul=document.getElementById("ul");
+            var lis=ul.children;
+
+            for(var i=0;i<lis.length;i++){
+                var span=document.createElement("span");
+                span.innerHTML=i+1;
+                div.appendChild(span);
+            }
+            var child=div.children;
+//            child[0].setAttribute("class","current");
+            for(var i=0;i<child.length;i++){
+                child[i].onmouseover=function () {
+                    child[i].index=i;
+
+                    for(var j=0;j<child.length;j++){
+
+//                        child[index].setAttribute("class","circle");
+                        child[index].className="circle"
+                    }
+                    this.setAttribute("class","current");
+
+                }
+            }
+        }
+        
+        
+    </script>
+</head>
+<body>
+<div class="all" id="all">
+    <div id="img">
+        <ul id="ul">
+            <li><img src="images/11.jpg" alt=""></li>
+            <li><img src="images/22.jpg" alt=""></li>
+            <li><img src="images/33.jpg" alt=""></li>
+            <li><img src="images/44.jpg" alt=""></li>
+            <li><img src="images/55.jpg" alt=""></li>
+        </ul>
+    </div>
+    <!--<div class="circle">-->
+        <!--<span class="current">1</span>-->
+        <!--<span>2</span><span>3</span><span>4</span><span>5</span>-->
+    <!--</div>-->
+</div>
+</body>
+</html>
