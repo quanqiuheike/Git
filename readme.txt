@@ -14,5 +14,9 @@ cqx third create
 hehe
 >>>>>>> cqx
 >>>>>>> hah
+<<<<<<< HEAD
 第三方的付
 master
+=======
+第三方的付发松岛枫第三方的
+>>>>>>> cqx
